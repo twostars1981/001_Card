@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>촬스 — 웹 명함</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+  <!-- 배포 후 고정 URL로 QR을 쓰려면: <body data-card-url="https://예시.com/명함/"> -->
+<body data-card-url="">
+  <div class="bg-stars" aria-hidden="true"></div>
+
+  <main class="card-wrap">
+    <div class="flip" id="flip">
+      <div class="flip__inner" id="flipInner">
+        <article class="card card--front" aria-labelledby="name-heading">
+          <div class="card__glow" aria-hidden="true"></div>
+
+          <header class="card__header">
+            <div class="avatar" role="img" aria-label="프랑켄슈타인풍 3D 캐릭터">
+              <svg class="face face--3d" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <radialGradient id="skin3d" cx="36%" cy="32%" r="68%">
+                    <stop offset="0%" stop-color="#c8f5d2" />
+                    <stop offset="28%" stop-color="#8fe0a0" />
+                    <stop offset="55%" stop-color="#5cb872" />
+                    <stop offset="82%" stop-color="#2d6a3f" />
+                    <stop offset="100%" stop-color="#1a4028" />
+                  </radialGradient>
+                  <linearGradient id="skinShadeL" x1="0" y1="0.5" x2="1" y2="0.5">
+                    <stop offset="0%" stop-color="#0d2818" stop-opacity="0.55" />
+                    <stop offset="40%" stop-color="#1a4028" stop-opacity="0.12" />
+                    <stop offset="100%" stop-color="#1a4028" stop-opacity="0" />
+                  </linearGradient>
+                  <linearGradient id="skinShadeR" x1="1" y1="0.5" x2="0" y2="0.5">
+                    <stop offset="0%" stop-color="#0d2818" stop-opacity="0.45" />
+                    <stop offset="45%" stop-color="#1a4028" stop-opacity="0.1" />
+                    <stop offset="100%" stop-color="#1a4028" stop-opacity="0" />
+                  </linearGradient>
+                  <radialGradient id="hair3d" cx="50%" cy="0%" r="95%">
+                    <stop offset="0%" stop-color="#4a4a58" />
+                    <stop offset="50%" stop-color="#1e1e28" />
+                    <stop offset="100%" stop-color="#0a0a10" />
+                  </radialGradient>
+                  <linearGradient id="hairHi" x1="0.3" y1="0" x2="0.7" y2="1">
+                    <stop offset="0%" stop-color="#6a6a78" />
+                    <stop offset="100%" stop-color="#1a1a22" />
+                  </linearGradient>
+                  <radialGradient id="bolt3d" cx="35%" cy="30%" r="70%">
+                    <stop offset="0%" stop-color="#f0f4f8" />
+                    <stop offset="45%" stop-color="#9ca8b8" />
+                    <stop offset="85%" stop-color="#5c6570" />
+                    <stop offset="100%" stop-color="#2d3238" />
+                  </radialGradient>
+                  <radialGradient id="bolt3dR" cx="65%" cy="30%" r="70%">
+                    <stop offset="0%" stop-color="#f0f4f8" />
+                    <stop offset="45%" stop-color="#9ca8b8" />
+                    <stop offset="85%" stop-color="#5c6570" />
+                    <stop offset="100%" stop-color="#2d3238" />
+                  </radialGradient>
+                  <radialGradient id="eyeball" cx="40%" cy="35%" r="75%">
+                    <stop offset="0%" stop-color="#ffffff" />
+                    <stop offset="70%" stop-color="#e8eef0" />
+                    <stop offset="100%" stop-color="#b8c4c8" />
+                  </radialGradient>
+                  <radialGradient id="pupil3d" cx="35%" cy="30%" r="80%">
+                    <stop offset="0%" stop-color="#3a3a48" />
+                    <stop offset="70%" stop-color="#121218" />
+                    <stop offset="100%" stop-color="#000000" />
+                  </radialGradient>
+                </defs>
+
+                <!-- ground / depth shadow -->
+                <ellipse cx="100" cy="198" rx="52" ry="10" fill="#000" opacity="0.28" />
+
+                <!-- neck bolts (behind face draw order: first) -->
+                <g class="bolt bolt--left">
+                  <rect x="4" y="116" width="16" height="12" rx="2" fill="url(#bolt3d)" />
+                  <circle cx="12" cy="122" r="10" fill="url(#bolt3d)" stroke="#3d4450" stroke-width="1.2" />
+                  <ellipse cx="9" cy="118" rx="3" ry="2" fill="#fff" opacity="0.55" />
+                </g>
+                <g class="bolt bolt--right">
+                  <rect x="180" y="116" width="16" height="12" rx="2" fill="url(#bolt3dR)" />
+                  <circle cx="188" cy="122" r="10" fill="url(#bolt3dR)" stroke="#3d4450" stroke-width="1.2" />
+                  <ellipse cx="191" cy="118" rx="3" ry="2" fill="#fff" opacity="0.55" />
+                </g>
+
+                <!-- hair back volume -->
+                <path
+                  d="M38 82 Q34 52 52 38 Q78 14 100 12 Q122 14 148 38 Q166 52 162 82 Q158 68 100 60 Q42 68 38 82 Z"
+                  fill="url(#hair3d)"
+                />
+                <path
+                  d="M46 72 L50 48 L64 58 L74 44 L88 54 L100 48 L112 54 L126 44 L136 58 L150 48 L156 72 Q100 64 46 72 Z"
+                  fill="url(#hairHi)"
+                  opacity="0.95"
+                />
+
+                <!-- head -->
+                <path
+                  d="M52 72 H148 L152 78 L158 118 Q160 150 100 172 Q40 150 42 118 L48 78 Z"
+                  fill="url(#skin3d)"
+                  stroke="#2d6a3f"
+                  stroke-width="1.5"
+                />
+                <!-- side shading for roundness -->
+                <path d="M52 72 H148 L152 78 L158 118 Q160 150 100 172 Q40 150 42 118 L48 78 Z" fill="url(#skinShadeL)" opacity="0.85" />
+                <path d="M52 72 H148 L152 78 L158 118 Q160 150 100 172 Q40 150 42 118 L48 78 Z" fill="url(#skinShadeR)" opacity="0.85" />
+                <!-- specular highlight -->
+                <ellipse cx="78" cy="98" rx="28" ry="22" fill="#fff" opacity="0.18" />
+
+                <!-- forehead stitch -->
+                <path d="M72 88 L128 88" stroke="#2d5038" stroke-width="2.2" stroke-dasharray="6 5" stroke-linecap="round" opacity="0.85" />
+                <line x1="78" y1="83" x2="78" y2="93" stroke="#1a3528" stroke-width="2" stroke-linecap="round" />
+                <line x1="100" y1="83" x2="100" y2="93" stroke="#1a3528" stroke-width="2" stroke-linecap="round" />
+                <line x1="122" y1="83" x2="122" y2="93" stroke="#1a3528" stroke-width="2" stroke-linecap="round" />
+
+                <!-- eyebrows -->
+                <path d="M58 102 Q72 96 86 102" fill="none" stroke="#14141c" stroke-width="5.5" stroke-linecap="round" />
+                <path d="M114 102 Q128 96 142 102" fill="none" stroke="#14141c" stroke-width="5.5" stroke-linecap="round" />
+
+                <!-- eyes -->
+                <ellipse cx="72" cy="118" rx="17" ry="21" fill="url(#eyeball)" />
+                <ellipse cx="128" cy="118" rx="17" ry="21" fill="url(#eyeball)" />
+                <ellipse class="pupil pupil--l" cx="74" cy="120" rx="9" ry="12" fill="url(#pupil3d)" />
+                <ellipse class="pupil pupil--r" cx="130" cy="120" rx="9" ry="12" fill="url(#pupil3d)" />
+                <circle cx="78" cy="113" r="4.5" fill="#fff" opacity="0.95" />
+                <circle cx="134" cy="113" r="4.5" fill="#fff" opacity="0.95" />
+
+                <!-- nose -->
+                <ellipse cx="100" cy="134" rx="9" ry="7" fill="#000" opacity="0.12" />
+                <ellipse cx="100" cy="132" rx="8" ry="6" fill="#4a9a5e" opacity="0.55" />
+
+                <!-- mouth -->
+                <path
+                  d="M82 152 Q100 164 118 152"
+                  fill="none"
+                  stroke="#1d4a2e"
+                  stroke-width="4"
+                  stroke-linecap="round"
+                />
+
+                <!-- cheek -->
+                <ellipse cx="52" cy="140" rx="14" ry="9" fill="#ff7eb8" opacity="0.22" />
+                <ellipse cx="148" cy="140" rx="14" ry="9" fill="#ff7eb8" opacity="0.22" />
+              </svg>
+            </div>
+            <h1 class="name" id="name-heading">촬스</h1>
+            <p class="role">일상 크리에이터</p>
+          </header>
+
+          <p class="tagline">어두워지면 자고, 눈 뜨면 일어나는 사람</p>
+
+          <ul class="contact">
+            <li>
+              <a class="contact__link" href="mailto:twostars1981@gmail.com">
+                <span class="contact__icon" aria-hidden="true">✉</span>
+                twostars1981@gmail.com
+              </a>
+            </li>
+            <li>
+              <a class="contact__link" href="tel:01096745488">
+                <span class="contact__icon" aria-hidden="true">☎</span>
+                010-9674-5488
+              </a>
+            </li>
+          </ul>
+
+          <div class="social">
+            <a
+              class="social__btn social__btn--linkedin"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              class="social__btn social__btn--youtube"
+              href="https://www.youtube.com/@ai-study"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              YouTube
+            </a>
+          </div>
+
+          <footer class="card__footer">
+            <button type="button" class="btn-flip" id="btnFlip" aria-label="명함 뒤집기">뒤집기</button>
+          </footer>
+        </article>
+
+        <article class="card card--back" aria-label="명함 뒷면">
+          <div class="card__glow card__glow--soft" aria-hidden="true"></div>
+          <div class="back-content">
+            <p class="back-quote">밤이 오면 쉬고,<br />아침이 오면 시작한다.</p>
+            <figure class="back-qr">
+              <canvas id="cardQr" width="140" height="140" role="img" aria-label="웹 명함 페이지로 연결되는 QR 코드"></canvas>
+              <figcaption class="back-qr__caption">웹 명함으로 연결</figcaption>
+            </figure>
+            <p class="back-sign">— 촬스</p>
+            <button type="button" class="btn-flip" id="btnFlipBack" aria-label="앞면으로">앞면</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <script src="qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
